@@ -3,7 +3,7 @@ name: Build Project
 on:
   push:
     branches:
-      - master
+      - master   # or main
 
 jobs:
   build:
@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
+          distribution: 'temurin'
 
       - name: Build using Maven
         run: mvn clean package
